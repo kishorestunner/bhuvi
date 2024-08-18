@@ -55,9 +55,6 @@ export default function Birthday() {
           </h1>
         </div>
       )}
-
-     
-
       <Button
         ref={buttonRef}
         disableRipple
