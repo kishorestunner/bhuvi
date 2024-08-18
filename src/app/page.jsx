@@ -1,9 +1,11 @@
 "use client"
 
+import Birthday from "./Birthday";
+
 export default function Home() {
   return (
     <div className="bg-black">
-        <h1>hiii</h1>
+        <Birthday />
     </div>
   );
 }
