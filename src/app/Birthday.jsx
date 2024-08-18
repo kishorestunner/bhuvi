@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import React, { useRef, useState } from "react";
 import confetti from "canvas-confetti";
+import HeartIcon from "@/components/Icons/HeartIcon";
 
 export default function Birthday() {
   const [showText, setShowText] = useState(false);
@@ -9,9 +10,12 @@ export default function Birthday() {
 
   const handleConfetti = () => {
     confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.9 },
+      particleCount: 50,
+      angle: 90,
+      spread: 45,
+      origin: { x: 0.5, y: 0.9 },
+      shapes: ["circle"], // Simulate hearts using circles and rotation
+      colors: ["#ff0000", "#ff69b4"], // Heart-like colors
     });
 
     // Reset and play the video when the button is pressed
@@ -39,8 +43,8 @@ export default function Birthday() {
         Your browser does not support the video tag.
       </video>
       {showText && (
-        <div className="flex flex-col top-32 space-y-3 relative z-10">
-          <h1 className="text-8xl text-success-500 font-bold animate-fade-in-1">
+        <div className="flex flex-col top-32 relative z-10">
+          <h1 className="text-8xl text-success-500 mb-3 font-bold animate-fade-in-1">
             Happy Birthday
           </h1>
           <h1 className="text-4xl text-warning-400 font-bold animate-fade-in-2">
@@ -51,6 +55,9 @@ export default function Birthday() {
           </h1>
         </div>
       )}
+
+     
+
       <Button
         ref={buttonRef}
         disableRipple
@@ -63,3 +70,5 @@ export default function Birthday() {
     </div>
   );
 }
+
+
