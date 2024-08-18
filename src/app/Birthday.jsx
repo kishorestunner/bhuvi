@@ -11,7 +11,7 @@ export default function Birthday() {
     confetti({
       particleCount: 100,
       spread: 70,
-      origin: { y: 0.6 },
+      origin: { y: 0.9 },
     });
 
     // Reset and play the video when the button is pressed
