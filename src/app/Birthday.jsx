@@ -1,7 +1,7 @@
 import { Button } from "@/components/Button";
 import React, { useRef, useState } from "react";
 import confetti from "canvas-confetti";
-import HeartIcon from "@/components/Icons/HeartIcon";
+
 
 export default function Birthday() {
   const [showText, setShowText] = useState(false);
@@ -65,7 +65,7 @@ export default function Birthday() {
         Press me
       </Button>
     </div>
-    
+
   );
 }
 
