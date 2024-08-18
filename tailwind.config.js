@@ -10,7 +10,6 @@ const colors = {
     400: "#8525F4",
     500: "#691BBC",
     600: "#360C69",
-
     DEFAULT: "#8525F4",
     foreground: "#ffffff",
   },
@@ -49,7 +48,7 @@ const colors = {
     DEFAULT: "#9C7107",
   },
   foreground: "#243757",
-}
+};
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -65,23 +64,15 @@ module.exports = {
   theme: {
     screens: {
       sm: "540px",
-      // => @media (min-width: 540px) { ... }
       md: "1024px",
-      // => @media (min-width: 1024px) { ... }
       lg: "1400px",
-      // => @media (min-width: 1400px) { ... }
-
-      // => I dont need these anymore
-      xl: "3500",
-      "2xl": "3600px",
     },
     colors,
-
     fontSize: {
       xs: ".75rem",
       sm: ".875rem",
       base: "1rem",
-      md: "1.125rem,",
+      md: "1.125rem",
       lg: "1.25rem",
       xl: "1.375rem",
       "2xl": "1.5rem",
@@ -91,16 +82,14 @@ module.exports = {
       "6xl": "2rem",
       "7xl": "2.125rem",
       "8xl": "2.25rem",
-      // New set of fonts
-
-      10: "10px", // .625rem = 10px
-      11: "11px", // .6875rem = 11px
-      12: "12px", // .75rem = 12px
-      13: "13px", // 13px
-      15: "15px", // .9375rem = 15px
-      16: "16px", // 1rem = 16px
-      19: "19px", // 1.1875rem = 19px
-      21: "21px", // 1.3125rem = 21px
+      10: "10px",
+      11: "11px",
+      12: "12px",
+      13: "13px",
+      15: "15px",
+      16: "16px",
+      19: "19px",
+      21: "21px",
     },
     extend: {
       boxShadow: {
@@ -112,14 +101,16 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradiant-light": "linear-gradient(180deg, #F3EDFD -25.55%, #FFF 100%)",
       },
       animation: {
-        shake: "shake 200ms ",
+        shake: "shake 200ms",
         scroll: "scroll .5s linear 10",
         "scroll-text": "scroll-text 7s linear 0s infinite normal",
+        'fade-in-1': 'fadeIn 0.5s ease-in forwards',
+        'fade-in-2': 'fadeIn 0.5s ease-in 0.5s forwards',
+        'fade-in-3': 'fadeIn 0.5s ease-in 1s forwards',
       },
       keyframes: {
         shake: {
@@ -127,33 +118,25 @@ module.exports = {
           "25%": { transform: "translateX(5px)" },
           "50%": { transform: "translateX(-5px)" },
           "75%": { transform: "translateX(5px)" },
-          "100%": { transform: "" },
+          "100%": { transform: "translateX(0)" },
         },
         scroll: {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(-100%)" },
         },
         "scroll-text": {
-          /* define the animation */
-          "0%": {
-            transform: "translateX(0%)",
-          },
-          "90%": {
-            transform: "translateX(-100%)",
-          },
-          "95%": {
-            transform: "translateX(0%)",
-          },
-          "100%": {
-            transform: "translateX(0%)",
-          },
+          "0%": { transform: "translateX(0%)" },
+          "90%": { transform: "translateX(-100%)" },
+          "95%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
       },
       gridTemplateColumns: {
-        // Simple 16 column grid
         13: "repeat(13, minmax(0, 1fr))",
-
-        // Complex site-specific column configuration
         footer: "200px minmax(900px, 1fr) 100px",
       },
     },
